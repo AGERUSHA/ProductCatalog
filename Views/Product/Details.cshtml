@@ -1,0 +1,28 @@
+@model ProductCatalog.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h2 class="mb-3">@Model.Name</h2>
+
+<table class="table w-auto">
+    <tr><th>Id</th><td>@Model.Id</td></tr>
+    <tr><th>Атауы</th><td>@Model.Name</td></tr>
+    <tr><th>Бағасы</th><td>@Model.Price.ToString("N0") ₸</td></tr>
+    <tr><th>Санаты</th><td>@Model.Category</td></tr>
+    <tr>
+        <th>Қолжетімділігі</th>
+        <td>
+            @if (Model.IsAvailable)
+            {
+                <span class="badge bg-success">Қоймада бар</span>
+            }
+            else
+            {
+                <span class="badge bg-danger">Қоймада жоқ</span>
+            }
+        </td>
+    </tr>
+</table>
+
+<a class="btn btn-secondary" asp-action="Index">← Каталогқа оралу</a>

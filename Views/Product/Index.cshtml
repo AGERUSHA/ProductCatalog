@@ -1,0 +1,23 @@
+@model List<ProductCatalog.Models.Product>
+
+<h2 class="mb-3">@ViewData["Title"]</h2>
+
+<div class="mb-3">
+    <a class="btn btn-sm @(ViewBag.SelectedCategory == null ? "btn-primary" : "btn-outline-primary")" asp-action="Index">Барлығы</a>
+    @foreach (var category in ViewBag.Categories)
+    {
+        <a class="btn btn-sm @(ViewBag.SelectedCategory == category ? "btn-primary" : "btn-outline-primary")"
+           asp-action="Index" asp-route-category="@category">@category</a>
+    }
+</div>
+
+<p class="text-muted">Тауарлар саны: @Model.Count · Қоймада бар: @ViewBag.AvailableCount</p>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+    @foreach (var product in Model)
+    {
+        <div class="col">
+            <partial name="_ProductCard" model="product" />
+        </div>
+    }
+</div>

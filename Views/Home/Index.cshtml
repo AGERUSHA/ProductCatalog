@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Жоба туралы";
+}
+
+<h2>Жоба туралы</h2>
+<p>Тапсырма 2: Каталог веб-қосымшасын Razor және Partial Views арқылы әзірлеу.</p>
+<ul>
+    <li><strong>Model:</strong> <code>Product</code> (Id, Name, Price, Category, IsAvailable)</li>
+    <li><strong>Strongly typed view:</strong> <code>Views/Product/Index.cshtml</code> → <code>@@model List&lt;Product&gt;</code></li>
+    <li><strong>ViewData / ViewBag:</strong> бет атауы, санаттар тізімі, қоймадағы тауарлар саны</li>
+    <li><strong>Layout:</strong> Bootstrap негізіндегі ортақ <code>_Layout.cshtml</code></li>
+    <li><strong>Partial View:</strong> <code>_ProductCard.cshtml</code> — әр тауардың карточкасы</li>
+</ul>
+<p class="text-muted">Орындаған: Агадинова Ақерке Қайратқызы, ИСК 241, Абай атындағы ҚазҰПУ</p>
+<a class="btn btn-primary" asp-controller="Product" asp-action="Index">Каталогқа өту</a>
